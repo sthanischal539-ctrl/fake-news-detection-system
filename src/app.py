@@ -11,6 +11,10 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import streamlit as st
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from src import config
 from src.data_loader import get_dataset_info
