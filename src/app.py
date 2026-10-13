@@ -108,6 +108,38 @@ def predict_tab():
         if b3.button("🔄 Clear"):
             st.session_state["article_input"] = ""
 
+    from pypdf import PdfReader
+
+    uploaded_pdf = st.file_uploader(
+        "📄 Upload a news article (PDF)",
+        type=["pdf"],
+        help="Upload a text-based PDF to extract its article text.",
+    )
+
+    if uploaded_pdf is not None:
+        try:
+            reader = PdfReader(uploaded_pdf)
+            extracted_text = "\\n\\n".join(
+                page.extract_text() or "" for page in reader.pages
+            ).strip()
+
+            if extracted_text:
+                st.session_state["article_input"] = extracted_text
+                st.success("PDF text extracted successfully.")
+                st.text_area(
+                    "Extracted PDF Text",
+                    value=extracted_text,
+                    height=200,
+                    disabled=True,
+                )
+            else:
+                st.warning(
+                    "No selectable text was found. This PDF may be scanned "
+                    "and require OCR."
+                )
+        except Exception as exc:
+            st.error(f"Could not read this PDF: {exc}")
+
     default_text = st.session_state.get("article_input", "")
     text = st.text_area(
         "Article Content",
