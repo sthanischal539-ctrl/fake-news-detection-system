@@ -1,0 +1,29 @@
+# Data and generated results
+data/raw/
+data/processed/
+results/
+
+# Large transformer weights and Hugging Face cache
+models/distilbert/
+models/hf_cache/# Data and model artefacts (large / regenerable)
+data/raw/
+data/processed/
+results/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+
+# NLTK downloaded data (if placed locally)
+nltk_data/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+models/hf_cache/
