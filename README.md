@@ -1,6 +1,5 @@
 # Fake News Detection System (NLP)
-
-An end-to-end Natural Language Processing system that classifies news articles as **Fake** or **Real** from their **full body text**, compares multiple classical machine learning models with a fine-tuned **DistilBERT** transformer, reports evaluation metrics on a held-out test set, and provides word-level explanations through **LIME** and a **Streamlit** dashboard.
+An end-to-end Natural Language Processing system that classifies news articles as Fake or Real based on their full body text. The system implements and compares three classical machine learning models: Logistic Regression, Multinomial Naive Bayes, and Linear SVM. It includes text preprocessing, TF-IDF feature extraction, model evaluation on a held-out test set, word-level explanations using LIME, and an interactive Streamlit dashboard. The project also includes a DistilBERT component for future exploration of transformer-based classification.
 
 > ⚠️ **CRITICAL ETHICAL DISCLAIMER — SIGNAL, NOT PROOF**  
 > Predictions produced by this system represent statistical, probabilistic patterns in writing style and vocabulary. They do **not** verify factual truth or real-world events. Misinformation models can be confidently wrong when confronted with novel events or authoritative styles. Always verify news against trusted, primary journalistic sources.
